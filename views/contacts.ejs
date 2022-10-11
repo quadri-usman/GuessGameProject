@@ -1,0 +1,53 @@
+<%- include('partials/header'); -%> <%- include('partials/navbar'); -%>
+
+<link rel="stylesheet" href="/contacts.css" />
+
+<div style="width: 50%; text-align: left; margin-top: 2em; padding-left: 10px">
+  <a href="/"><i class="fa-solid fa-arrow-left fa-2x"></i> Back to Home Page</a>
+  <label style="color: black; -webkit-text-stroke: 1px white; width: 100%"
+    ><i class="fa-solid fa-arrow-left fa-2x"></i
+  ></label>
+</div>
+
+<div>
+  <form method="post" action="/contacts" class="form">
+    <header id="contact-head">
+      <h1>Contact Us</h1>
+      <p>
+        <small class="contact-title"
+          >We'd love to hear from you, please send us a message</small
+        >
+      </p>
+    </header>
+    <input type="text" id="name" placeholder="Full Names" name="names" />
+    <input type="text" placeholder="Message" name="message" />
+    <!-- <textarea
+      placeholder="Message"
+      name="message"
+      class="field"
+      rows="10px"
+    ></textarea> -->
+    <button type="submit" id="submit">Send</button>
+    <!-- <div class="cont-field">
+      <input
+        type="email"
+        id="email"
+        placeholder="Email Address"
+        name="email"
+        autofocus
+      />
+    </div>
+
+    <div class="cont-field">
+      <textarea placeholder="Message" class="field"></textarea>
+    </div>
+
+    <div class="cont-butns">
+      <div class="cont-butn1">
+        <button type="submit" id="submit">Send</button>
+      </div>
+    </div> -->
+  </form>
+</div>
+
+<%- include('partials/footer'); -%>

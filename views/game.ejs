@@ -1,0 +1,29 @@
+<%- include('partials/header'); -%> <%- include('partials/navbar'); -%>
+
+<link rel="stylesheet" href="/guess.css" />
+<div class="header">
+  <h1 class="header-name">Guessing Game</h1>
+</div>
+
+<h2 class="stage">Stage 1</h2>
+<p class="game-text">Guess a number from 1-2</p>
+
+<form class="input-wrap">
+  <div class="input-container">
+    <input
+      type="text"
+      id="number"
+      placeholder="Enter a Number"
+      class="input-name"
+      maxlength="3"
+    />
+    <button class="input-button" type="submit" id="button">Go</button>
+  </div>
+</form>
+<div class="buttons">
+  <button class="button" id="reset" onclick="reset()">Restart</button>
+  <button class="button">Award: <span id="award"></span></button>
+</div>
+
+<script src="<%= 'js/guess.js' %>"></script>
+<%- include('partials/footer'); -%>

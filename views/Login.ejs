@@ -1,0 +1,75 @@
+<%- include('partials/header'); -%> <%- include('partials/navbar'); -%>
+
+<link rel="stylesheet" href="/Login.css" />
+
+<div style="width: 50%; text-align: left; margin-top: 2em; padding-left: 10px">
+  <a href="/"><i class="fa-solid fa-arrow-left fa-2x"></i> Back to Home Page</a>
+  <label style="color: black; -webkit-text-stroke: 1px white; width: 100%"
+    ><i class="fa-solid fa-arrow-left fa-2x"></i
+  ></label>
+</div>
+<form method="post" action="/login" class="form">
+  <header id="mbile">
+    <h1>Login</h1>
+    <p class="down-mobile">
+      Don't have an account? <a href="/register">Create an Account</a>
+    </p>
+  </header>
+  <input
+    type="text"
+    class="field"
+    placeholder="Username"
+    id="username"
+    name="username"
+  />
+
+  <input
+    type="password"
+    class="field"
+    id="password"
+    placeholder="Password"
+    name="password"
+  />
+  <div class="butn1">
+    <button type="submit" id="submit">Login</button>
+  </div>
+
+  <!-- <div class="field">
+    <input
+      type="email"
+      id="email"
+      placeholder="Email"
+      name="email"
+      autofocus
+      onmouseover="this.setSelectionRange(this.value.length,this.value.length);"
+      onfocus="this.setSelectionRange(this.value.length,this.value.length);"
+    />
+    <input
+      type="password"
+      id="password"
+      placeholder="Password"
+      name="password"
+    />
+    <span id="togglePassword">
+      <i id="hide1" class="fa-solid eyes fa-eye-slash"></i>
+    </span>
+  </div>
+  <div class="rem-pass">
+    <div class="checkbox-field">
+      <label class="checkbox" for="remember">Remember me</label>
+      <input
+        class="checkbox-input"
+        type="checkbox"
+        name="rememberbox"
+        id="remember"
+      />
+    </div>
+    <div class="pass">
+      <p><a href="/SIgnUp">Forgot password?</a></p>
+    </div>
+  </div>
+  <div class="butn1">
+    <button type="submit" id="submit">Login</button>
+  </div> -->
+</form>
+<%- include('partials/footer'); -%>

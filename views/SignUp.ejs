@@ -1,0 +1,84 @@
+<%- include('partials/header'); -%> <%- include('partials/navbar'); -%>
+
+<link rel="stylesheet" href="/SignUp.css" />
+
+<div style="width: 50%; text-align: left; margin-top: 2em; padding-left: 10px">
+  <a href="/"><i class="fa-solid fa-arrow-left fa-2x"></i> Back to Home Page</a>
+  <label style="color: black; -webkit-text-stroke: 1px white; width: 100%"
+    ><i class="fa-solid fa-arrow-left fa-2x"></i
+  ></label>
+</div>
+
+<form method="post" action="/register" class="form">
+  <h1>SignUp</h1>
+  <p>
+    <small class="down-mobile"
+      >Already have an account? <a href="/Login">Login</a>
+    </small>
+  </p>
+  <input
+    type="text"
+    class="field"
+    placeholder="Username"
+    id="username"
+    name="username"
+  />
+
+  <input
+    type="password"
+    class="field"
+    id="password"
+    placeholder="Password"
+    name="password"
+  />
+
+  <button type="submit" id="submit">Submit</button>
+
+  <!-- <header id="mbile">
+    <h1>SignUp</h1>
+    <p>
+      <small class="down-mobile"
+        >Already have an account? <a href="/Login">Login</a>
+      </small>
+    </p>
+  </header>
+  <div class="field">
+    <label for="username">Name</label>
+    <input
+      type="text"
+      value=""
+      placeholder="Username"
+      id="username"
+      name="username"
+      autofocus
+      onmouseover="this.setSelectionRange(this.value.length,this.value.length);"
+      onfocus="this.setSelectionRange(this.value.length,this.value.length);"
+    />
+    <small></small>
+  </div>
+  <div class="field">
+                <label for="email">Email</label>
+                <input type="email" value="" placeholder="Email Address" id="email" name="email">
+                <small></small>
+            </div>
+  <div class="field">
+    <input
+      type="password"
+      id="password"
+      placeholder="Password"
+      name="password"
+    />
+    <label for="password">Password</label>
+    <input type="password" id="password" placeholder='Type password again' name="password">
+                <small></small>
+                <span id="togglePassword">
+                    <i id="hide1" class="fa-solid eyes fa-eye-slash"></i>
+                </span>
+  </div>
+  <div class="butns">
+    <div class="butn1">
+      <button type="submit" id="submit">Create account</button>
+    </div>
+  </div> -->
+</form>
+<%- include('partials/footer'); -%>

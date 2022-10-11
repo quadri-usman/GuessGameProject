@@ -1,0 +1,104 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  background-image: url("images/Bora\ Bora.jpg");
+  font-family: sans-serif;
+  padding: 0 2rem;
+}
+
+.header-name {
+  text-align: center;
+  color: #500a50;
+  font-size: 5rem;
+  margin: 5rem 0;
+}
+
+.input-wrap {
+  display: flex;
+}
+
+.input-container {
+  display: flex;
+  margin: 2rem auto;
+}
+
+.input-name {
+  width: 80%;
+  border-radius: 3rem 0 0 3rem;
+  padding: 2rem;
+  font-size: 1.8rem;
+  outline: none;
+  border: 0.2rem solid white;
+  height: 5rem;
+}
+
+.input-button {
+  color: white;
+  background-color: #9c3939;
+  font-size: 3rem;
+  text-align: center;
+  outline: none;
+  border: none;
+  border-radius: 0 3rem 3rem 0;
+  width: 10rem;
+  height: 5rem;
+}
+
+.hint {
+  text-align: center;
+  font-size: 3rem;
+  margin: 2rem 0;
+}
+
+.buttons {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 2rem 0;
+  gap: 2rem 0;
+}
+
+.button {
+  color: white;
+  background-color: #663333;
+  font-size: 2.5rem;
+  width: 15rem;
+  height: 5rem;
+  border-radius: .5rem;
+  outline: none;
+  border: none;
+}
+
+
+.random-number {
+  font-size: 15rem;
+  text-align: center;
+}
+
+.right-wrong {
+  font-size: 3rem;
+  text-align: center;
+}
+
+.stage {
+  font-size: 3rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.game-text {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+

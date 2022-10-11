@@ -1,0 +1,53 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap");
+body{
+	font-family: "Nunito Sans", sans-serif;
+}
+form{
+	width: 400px;
+	margin: 0 auto;
+	display: flex;
+	flex-direction: column;
+	text-align: center;
+}
+h1{
+	font-size: 1.6em;
+	text-align: center;
+}
+.contact-title{
+	font-size: 16px;
+	font-weight: 600;
+}
+input, textarea{
+	width: 100%;
+	margin: 10px 0;
+	padding: 10px;
+	
+}
+#submit {
+	width: 100%;
+	padding: 0.8em 0em;
+	border: none;
+	background-color: blue;
+	/* box-shadow: 1px 2px 5px 0.5px rgba(45, 73, 235, 0.5); */
+	font-weight: 600;
+	color: #fcfcff;
+	border-radius: 5px;
+	letter-spacing: 0.02em;
+	font-size: 1.5rem;
+	line-height: 20px;
+	cursor: pointer;
+	margin: 10px 0;
+  
+  }
+  
+
+  @media only screen and (max-width: 400px){
+	.txt-lines::before{
+	  height: 0.4px;
+	  width: 10.5em;
+	}
+	.txt-lines::after{
+	  height: 0.4px;
+	  width: 10.5em;
+	}
+  }

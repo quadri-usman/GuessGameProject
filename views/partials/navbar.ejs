@@ -1,0 +1,32 @@
+<nav class="navbar-">
+  <div class="nav-logo">
+    <a href="/" style="color: black"
+      ><img
+        src="<%= '/images/web-layout-design-tutorials-4.jpg' %>"
+        alt="brand-logo"
+        class="logo-img"
+      /><span></span>
+    </a>
+  </div>
+  <div class="menu-left">
+    <a href="/contacts" class="nav-link">Contact Us</a>
+  </div>
+  <div class="menu-right">
+    <% if (!currentUser){ %>
+    <a href="/register" class="nav-link active-sign">Signup</a>
+    <a href="/Login" class="nav-link">Login</a>
+    <% } else{ %>
+    <a href="/profile" class="nav-link"
+      >Signed in as <%= currentUser.username %></a
+    >
+    <a href="/logout" class="nav-link">Logout</a>
+    <% } %>
+  </div>
+</nav>
+<% if(error && error.length>0){ %>
+<div class="alert alert-primary" role="alert"><%= error %></div>
+<% } else if(success &&success.length>0){ %>
+<div class="alert alert-success" role="alert"><%= success %></div>
+<% } else if(welcome && welcome.length>0){ %>
+<div class="alert alert-info" role="alert"><%= welcome %></div>
+<% }%>
