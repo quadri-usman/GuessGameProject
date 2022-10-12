@@ -10,7 +10,7 @@
 </div>
 
 <div>
-  <form method="post" action="/contacts" class="form">
+  <form method="POST" action="/contacts" class="form">
     <header id="contact-head">
       <h1>Contact Us</h1>
       <p>
@@ -20,7 +20,14 @@
       </p>
     </header>
     <input type="text" id="name" placeholder="Full Names" name="names" />
-    <input type="text" placeholder="Message" name="message" />
+    <textarea
+      name="message"
+      placeholder="Message"
+      id=""
+      cols="30"
+      rows="10"
+    ></textarea>
+    <!-- <input type="text" placeholder="Message" name="message" /> -->
     <!-- <textarea
       placeholder="Message"
       name="message"
@@ -49,5 +56,30 @@
     </div> -->
   </form>
 </div>
+<script>
+  $(() => {
+    $("#send").click(() => {
+      sendMessage({
+        name: $("#name").val(),
+        message: $("#message").val(),
+      });
+    });
+    getMessages();
+  });
 
-<%- include('partials/footer'); -%>
+  function addMessages(message) {
+    $(`#messages`).append(`
+        <h4> ${message.name} </h4>
+        <p>  ${message.message} </p>`);
+  }
+
+  function getMessages() {
+    $.get(`http://localhost:9000/messages`, (data) => {
+      data.forEach(addMessages);
+    });
+  }
+
+  function sendMessage(message) {
+    $.post(`http://localhost:9000/messages`, message);
+  }
+</script>
