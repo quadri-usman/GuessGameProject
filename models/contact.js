@@ -1,9 +1,9 @@
 var mongoose = require("mongoose"),
   passportLocalMongoose = require("passport-local-mongoose");
 
-var contactSchema = new mongoose.Schema({
+var messageSchema = new mongoose.Schema({
   names: String,
   message: String,
 });
-contactSchema.plugin(passportLocalMongoose);
-module.exports = mongoose.model("Contact", contactSchema);
+messageSchema.plugin(passportLocalMongoose);
+module.exports = mongoose.model("Message", messageSchema);

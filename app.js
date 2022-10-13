@@ -3,7 +3,7 @@ var express = require("express"),
   passport = require("passport"),
   flash = require("connect-flash"),
   User = require("./models/user"),
-  Contact = require("./models/contact"),
+  Message = require("./models/contact"),
   bodyParser = require("body-parser"),
   localStrategy = require("passport-local"),
   passportLocalMongoose = require("passport-local-mongoose");
@@ -46,7 +46,6 @@ app.get("/", function (req, res) {
   // res.send("<h1>You are Welcome!!!</h1><h2>You are Welcome!!!</h2>")
 });
 app.get("/game", isLoggedIn, (req, res) => {
-  req.flash("success", "You can start Now");
   res.render("game");
 });
 app.get("/register", function (req, res) {
@@ -58,7 +57,7 @@ app.post("/register", (req, res) => {
     req.body.password,
     (err, user) => {
       if (err) {
-        req.flash("success", "Username already exists");
+        req.flash("error", "Username already exists");
         return res.render("SignUp");
       }
       passport.authenticate("local")(req, res, () => {
@@ -68,18 +67,6 @@ app.post("/register", (req, res) => {
     }
   );
 });
-app.post("/contacts", (req, res) => {
-  new Contact({ names: req.body.names, message: req.body.message }),
-    (err, contact) => {
-      if (err) {
-        console.log(err);
-        return res.render("/contacts");
-      } else {
-        res.send("Thanks for contacting Us");
-      }
-    };
-});
-
 app.get("/login", function (req, res) {
   res.render("Login");
 });
@@ -89,10 +76,8 @@ app.post(
     successRedirect: "/",
     failureRedirect: "/login",
   }),
-  (req, res, err) => {
-    if (err) {
-      req.flash("error", "User not found");
-    } else req.flash("success", "You login successfully");
+  (req, res) => {
+    req.flash("success", "You login successfully");
   }
 );
 app.get("/logout", function (req, res) {
@@ -111,9 +96,25 @@ function isLoggedIn(req, res, next) {
   req.flash("error", "Please Login First");
   res.redirect("/login");
 }
-
-app.get("/contacts", function (req, res) {
+app.get("/contacts", isLoggedIn, function (req, res) {
   res.render("contacts");
+});
+app.post("/contacts", (req, res) => {
+  var message = new Message(req.body);
+  message.save((err) => {
+    if (err) {
+      sendStatus(500);
+      console.log(err);
+    } else
+      req.flash(
+        "success",
+        "Hi " + req.body.names + ", Thanks for contacting us"
+      );
+    res.redirect("secret");
+  });
+});
+app.get("/secret", (req, res) => {
+  res.render("secret");
 });
 app.get("*", function (req, res) {
   res.send("Page not found");
